@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JAVASCRIPT OOPS</title>
+</head>
+<body>
+	<div align="center">
+	<h1>Welcome to Javascript OOPS</h1>
+	<script>
+		function student(firstname,lastname){
+			this.firstname = firstname || "undefined";
+			this.lastname = lastname || "undefined"
+		};
+
+		student.prototype.getfullName = function(){
+			this.firstname + " "+ this.lastname;
+		}
+
+		function players(firstname,lastname, teamname, level){
+			student.call(this, firstname, lastname);
+			this.teamname = teamname || "undefined";
+			this.level = level || "0";
+		}
+		players.prototype = new student();
+		players.prototype.constructor = players;
+	</script>
+</div>
+
+</body>
+</html>
